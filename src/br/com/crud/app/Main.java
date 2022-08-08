@@ -28,7 +28,7 @@ public class Main {
 					
 				}else {
 					do {
-							System.out.println("QUAL FUNÇÃO DESEJA REALIZAR NO SISTEMA?\n");
+							System.out.println("QUAL FUNÃ‡ÃƒO DESEJA REALIZAR NO SISTEMA?\n");
 							System.out.println("CREATE - Para cadastrar produto");
 							System.out.println("READ - Para retornar os produtos cadastrados");
 							System.out.println("UPDATE - Para atualizar um produto cadastrado");
@@ -36,9 +36,9 @@ public class Main {
 							
 							String funcao = input.nextLine();
 							
-							if  (funcao.equalsIgnoreCase("CREATE") == false && funcao.equalsIgnoreCase("READ") == false && funcao.equalsIgnoreCase("UPDATE") == false && funcao.equalsIgnoreCase("DELETE") == false) {
+							if  (!funcao.equalsIgnoreCase("CREATE") && !funcao.equalsIgnoreCase("READ") && !funcao.equalsIgnoreCase("UPDATE") && !funcao.equalsIgnoreCase("DELETE")) {
 								
-								System.err.println("Função '" + funcao + "' invalida!\nFunções Validas: CREATE, READ, UPDATE ou DELETE");
+								System.err.println("FunÃ§Ã£o '" + funcao + "' invalida!\nFunÃ§Ãµes Validas: CREATE, READ, UPDATE ou DELETE");
 								
 							}else {
 								//CREATE
@@ -49,7 +49,7 @@ public class Main {
 									Produto produto = new Produto();
 									
 									do {
-										System.out.println("Digite a descrição do produto: ");
+										System.out.println("Digite a descriÃ§Ã£o do produto: ");
 										produto.setDescricao(input.nextLine());
 										
 										System.out.println("Digite o fabricante do produto: ");
@@ -63,15 +63,15 @@ public class Main {
 										
 										produtoDao.save(produto);
 										
-										System.out.println("DESEJA CADASTRAR OUTRO PRODUTO?\nSim ou Não");
+										System.out.println("DESEJA CADASTRAR OUTRO PRODUTO?\nSim ou NÃ£o");
 										resposta = input.nextLine();
 										
-										if (resposta.equalsIgnoreCase("Sim") == false && resposta.equalsIgnoreCase("Não") == false) {
-											System.err.println("Opção invalida!");
+										if (resposta.equalsIgnoreCase("Sim") == false && resposta.equalsIgnoreCase("NÃ£o") == false) {
+											System.err.println("OpÃ§Ã£o invalida!");
 											break;
 										}else {
-											if (resposta.equalsIgnoreCase("Não")) {
-												System.out.println("Até logo!");
+											if (resposta.equalsIgnoreCase("NÃ£o")) {
+												System.out.println("AtÃ© logo!");
 												System.exit(0);
 											}
 										}
@@ -103,7 +103,7 @@ public class Main {
 										produto.setId(Integer.parseInt(input.nextLine()));
 										
 										//Solicita os valores para UPDATE do registro
-										System.out.println("ATUALIZANDO - Digite a descrição do produto: ");
+										System.out.println("ATUALIZANDO - Digite a descriÃ§Ã£o do produto: ");
 										produto.setDescricao(input.nextLine());
 										
 										System.out.println("ATUALIZANDO - Digite o fabricante do produto: ");
@@ -117,15 +117,15 @@ public class Main {
 										
 										produtoDao.update(produto);
 										
-										System.out.println("DESEJA ATUALIZAR OUTRO PRODUTO?\nSim ou Não");
+										System.out.println("DESEJA ATUALIZAR OUTRO PRODUTO?\nSim ou NÃ£o");
 										resposta = input.nextLine();
 										
-										if (resposta.equalsIgnoreCase("Sim") == false && resposta.equalsIgnoreCase("Não") == false) {
-											System.err.println("Opção invalida!");
+										if (resposta.equalsIgnoreCase("Sim") == false && resposta.equalsIgnoreCase("NÃ£o") == false) {
+											System.err.println("OpÃ§Ã£o invalida!");
 											break;
 										}else {
-											if (resposta.equalsIgnoreCase("Não")) {
-												System.out.println("Até logo!");
+											if (resposta.equalsIgnoreCase("NÃ£o")) {
+												System.out.println("AtÃ© logo!");
 												System.exit(0);
 											}
 										}
@@ -141,15 +141,15 @@ public class Main {
 										System.out.println("Digite o ID do produto que deseja deletar: ");
 										produtoDao.deleteByID(Integer.parseInt(input.nextLine()));
 
-										System.out.println("DESEJA DELETAR OUTRO PRODUTO?\nSim ou Não");
+										System.out.println("DESEJA DELETAR OUTRO PRODUTO?\nSim ou NÃ£o");
 										resposta = input.nextLine();
 										
-										if (resposta.equalsIgnoreCase("Sim") == false && resposta.equalsIgnoreCase("Não") == false) {
-											System.err.println("Opção invalida!");
+										if (resposta.equalsIgnoreCase("Sim") == false && resposta.equalsIgnoreCase("NÃ£o") == false) {
+											System.err.println("OpÃ§Ã£o invalida!");
 											break;
 										}else {
-											if (resposta.equalsIgnoreCase("Não")) {
-												System.out.println("Até logo!");
+											if (resposta.equalsIgnoreCase("NÃ£o")) {
+												System.out.println("AtÃ© logo!");
 												System.exit(0);
 											}
 										}
